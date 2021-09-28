@@ -1,5 +1,5 @@
-import 'package:clinic_app/blue_box.dart';
-import 'package:clinic_app/white_box.dart';
+import 'package:clinic_app/components/blue_box.dart';
+import 'package:clinic_app/components/white_box.dart';
 import 'package:flutter/material.dart';
 
 class ResetPasswordScreen extends StatefulWidget {

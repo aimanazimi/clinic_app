@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 
 class BlueBox extends StatelessWidget {
   final String? label;
+  final void Function()? onPressed;
 
   const BlueBox({
     Key? key,
     this.label,
+    this.onPressed,
   }) : super(key: key);
 
   @override
@@ -18,10 +20,7 @@ class BlueBox extends StatelessWidget {
         // borderRadius: BorderRadius.all(Radius.circular(30.0)),
         elevation: 5.0,
         child: MaterialButton(
-          onPressed: () {
-            print(label);
-            //Implement login functionality.
-          },
+          onPressed: onPressed,
           minWidth: 200.0,
           height: 48.0,
           child: Text('$label'),

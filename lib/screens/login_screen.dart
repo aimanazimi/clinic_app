@@ -1,9 +1,10 @@
 import 'package:clinic_app/screens/registration_screen.dart';
 import 'package:clinic_app/screens/reset_password_screen.dart';
+import 'package:clinic_app/screens/update_screens.dart';
 import 'package:flutter/material.dart';
-import 'package:clinic_app/already_have_an_account_check.dart';
-import 'package:clinic_app/white_box.dart';
-import 'package:clinic_app/blue_box.dart';
+import 'package:clinic_app/components/already_have_an_account_check.dart';
+import 'package:clinic_app/components/white_box.dart';
+import 'package:clinic_app/components/blue_box.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -79,6 +80,14 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   BlueBox(
                     label: 'Sign In',
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => UpdatesScreen(),
+                        ),
+                      );
+                    },
                   ),
                   SizedBox(
                     height: 20.0,

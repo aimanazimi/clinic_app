@@ -1,8 +1,8 @@
-import 'package:clinic_app/blue_box.dart';
+import 'package:clinic_app/components/blue_box.dart';
 import 'package:clinic_app/screens/login_screen.dart';
-import 'package:clinic_app/white_box.dart';
+import 'package:clinic_app/components/white_box.dart';
 import 'package:flutter/material.dart';
-import 'package:clinic_app/already_have_an_account_check.dart';
+import 'package:clinic_app/components/already_have_an_account_check.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 
 class RegistrationScreen extends StatefulWidget {
