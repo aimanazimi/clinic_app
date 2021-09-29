@@ -12,7 +12,6 @@ class ReusableButton extends StatelessWidget {
       : super(key: key);
 
   final Color? boxColor, textColor;
-
   final double? width, height;
   final String? title;
   final void Function()? onTap;

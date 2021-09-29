@@ -1,3 +1,4 @@
+import 'package:clinic_app/constants.dart';
 import 'package:clinic_app/screens/login_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -26,7 +27,7 @@ class _IntroScreenState extends State<IntroScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.cyan,
+      backgroundColor: kBackgroundColour,
       body: SafeArea(
         child: Column(
           children: [
@@ -66,7 +67,6 @@ class _IntroScreenState extends State<IntroScreen> {
             ),
             Expanded(
               child: Container(
-                color: Colors.cyan,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
@@ -76,6 +76,7 @@ class _IntroScreenState extends State<IntroScreen> {
                     ),
                     ReusableButton(
                       title: 'Register',
+                      boxColor: Color(0xFF384DFE),
                       width: 120,
                       height: 60,
                       onTap: () {
@@ -97,7 +98,8 @@ class _IntroScreenState extends State<IntroScreen> {
                       children: [
                         const Text(
                           'Already our Family?',
-                          style: TextStyle(fontSize: 16, color: Colors.white),
+                          style:
+                              TextStyle(fontSize: 16, color: Color(0xFF384DFE)),
                         ),
                         const SizedBox(
                           width: 10,
@@ -127,7 +129,8 @@ class _IntroScreenState extends State<IntroScreen> {
                       children: [
                         const Text(
                           'Language',
-                          style: TextStyle(fontSize: 16, color: Colors.white),
+                          style:
+                              TextStyle(fontSize: 16, color: Color(0xFF384DFE)),
                         ),
                         const SizedBox(
                           width: 10,
@@ -135,7 +138,8 @@ class _IntroScreenState extends State<IntroScreen> {
                         TextButton(
                           child: Text(
                             'ENG',
-                            style: TextStyle(fontSize: 16, color: Colors.blue[900]),
+                            style: TextStyle(
+                                fontSize: 16, color: Colors.blue[900]),
                           ),
                           onPressed: () {
                             print('language ENG tapped');
@@ -146,7 +150,8 @@ class _IntroScreenState extends State<IntroScreen> {
                         ),
                         const Text(
                           '/',
-                          style: TextStyle(fontSize: 16, color: Colors.white),
+                          style:
+                              TextStyle(fontSize: 16, color: Color(0xFF384DFE)),
                         ),
                         const SizedBox(
                           width: 5,
@@ -154,7 +159,8 @@ class _IntroScreenState extends State<IntroScreen> {
                         TextButton(
                           child: Text(
                             'BM',
-                            style: TextStyle(fontSize: 16, color: Colors.blue[900]),
+                            style: TextStyle(
+                                fontSize: 16, color: Colors.blue[900]),
                           ),
                           onPressed: () {
                             print('language BM tapped');

@@ -1,4 +1,6 @@
+import 'package:clinic_app/components/navigation_arrow.dart';
 import 'package:clinic_app/components/reusable_button.dart';
+import 'package:clinic_app/constants.dart';
 import 'package:clinic_app/screens/main_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -15,7 +17,7 @@ class _UpdatesScreenState extends State<UpdatesScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.cyan,
+      backgroundColor: kBackgroundColour,
       body: SafeArea(
         child: Column(
           children: [
@@ -33,80 +35,48 @@ class _UpdatesScreenState extends State<UpdatesScreen> {
                 margin: const EdgeInsets.symmetric(horizontal: 30),
                 child: Column(
                   children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        const Text(
-                          'Promo 1',
-                          style: TextStyle(fontSize: 24),
-                        ),
-                        InkWell(
-                          onTap: () {
-                            print('promo 1 tapped');
-                          },
-                          child: Icon(
-                            Icons.play_arrow,
-                            color: Colors.blue[900],
-                            size: 50,
-                          ),
-                        )
-                      ],
-                    ), //promo 1
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        const Text(
-                          'Promo 2',
-                          style: TextStyle(fontSize: 24),
-                        ),
-                        InkWell(
-                          onTap: () {
-                            print('promo 2 tapped');
-                          },
-                          child: Icon(
-                            Icons.play_arrow,
-                            color: Colors.blue[900],
-                            size: 50,
-                          ),
-                        )
-                      ],
-                    ), //promo 2
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        const Text(
-                          'Update 1',
-                          style: TextStyle(fontSize: 24),
-                        ),
-                        InkWell(
-                          onTap: () {
-                            print('update 1 tapped');
-                          },
-                          child: Icon(
-                            Icons.play_arrow,
-                            color: Colors.blue[900],
-                            size: 50,
-                          ),
-                        )
-                      ],
-                    ), //update 1
+                    NavigationArrow(
+                      title: 'Promo 1',
+                      onTap: () {
+                        print('Promo 1 tapped');
+                      },
+                      arrowcolor: Colors.blue[900],
+                    ),
+                    NavigationArrow(
+                      title: 'Promo 2',
+                      onTap: () {
+                        print('Promo 2 tapped');
+                      },
+                      arrowcolor: Colors.blue[900],
+                    ),
+                    NavigationArrow(
+                      title: 'Update 1',
+                      onTap: () {
+                        print('Update tapped');
+                      },
+                      arrowcolor: Colors.blue[900],
+                    ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         ReusableButton(
                           title: 'NEXT',
+                          boxColor: Color(0xFF384DFE),
                           width: 100,
                           height: 50,
                           onTap: () {
                             print('next button tapped');
-                            Navigator.push(context,
-                                MaterialPageRoute(builder: (context) => const MainScreen()));
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const MainScreen()));
                           },
                         ),
                         Row(
                           children: [
                             Checkbox(
-                                fillColor: MaterialStateColor.resolveWith((states) => Colors.black),
+                                fillColor: MaterialStateColor.resolveWith(
+                                    (states) => Colors.black),
                                 value: checkBoxValue,
                                 onChanged: (value) {
                                   setState(() {

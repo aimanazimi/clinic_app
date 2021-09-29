@@ -1,3 +1,4 @@
+import 'package:clinic_app/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:clinic_app/components/reusable_button.dart';
 import 'package:clinic_app/components/reusable_button_icon.dart';
@@ -16,9 +17,9 @@ class _HomeScreenState extends State<HomeScreen> {
       debugShowCheckedModeBanner: false,
       home: SafeArea(
         child: Scaffold(
-          backgroundColor: Colors.cyan,
+          backgroundColor: kBackgroundColour,
           appBar: AppBar(
-            backgroundColor: Colors.cyan,
+            backgroundColor: kBackgroundColour,
             elevation: 0,
             leading: Padding(
               padding: const EdgeInsets.fromLTRB(5, 5, 0, 5),
@@ -42,7 +43,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 padding: const EdgeInsets.all(8.0).copyWith(right: 15),
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20)),
                       primary: Colors.white,
                       onPrimary: Colors.cyan[800],
                       elevation: 5),
@@ -66,15 +68,18 @@ class _HomeScreenState extends State<HomeScreen> {
                           title: const TextField(
                             decoration: InputDecoration(
                               enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(color: Colors.white, width: 1.0),
+                                borderSide:
+                                    BorderSide(color: Colors.white, width: 1.0),
                                 // borderRadius: BorderRadius.all(Radius.circular(32.0)),
                               ),
                               focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(color: Colors.white, width: 2.0),
+                                borderSide:
+                                    BorderSide(color: Colors.white, width: 2.0),
                                 // borderRadius: BorderRadius.all(Radius.circular(32.0)),
                               ),
                               prefixIcon: Icon(Icons.search),
-                              hintText: 'Search health issue, doctor, topics...',
+                              hintText:
+                                  'Search health issue, doctor, topics...',
                               hintStyle: TextStyle(color: Colors.grey),
                               // border: OutlineInputBorder(),
                             ),
@@ -96,7 +101,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     const Center(
                       child: Text(
                         'CURRENT APPOINTMENT',
-                        style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.bold),
                       ),
                     ),
                     ReusableButton(
@@ -108,12 +114,14 @@ class _HomeScreenState extends State<HomeScreen> {
                       padding: EdgeInsets.all(15.0),
                       child: Text(
                         'How can we help you?',
-                        style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.bold),
                       ),
                     ), //text widget
                     SizedBox(
                       height: 120,
-                      child: ListView(scrollDirection: Axis.horizontal, children: [
+                      child:
+                          ListView(scrollDirection: Axis.horizontal, children: [
                         Padding(
                           padding: const EdgeInsets.all(5.0),
                           child: ReusableButtonIcon(
@@ -169,7 +177,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         children: [
                           const Text(
                             'Popular Categories',
-                            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                            style: TextStyle(
+                                fontSize: 20, fontWeight: FontWeight.bold),
                           ),
                           TextButton(
                               onPressed: () {},
@@ -186,7 +195,8 @@ class _HomeScreenState extends State<HomeScreen> {
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             Padding(
-                              padding: const EdgeInsets.all(5.0).copyWith(right: 0),
+                              padding:
+                                  const EdgeInsets.all(5.0).copyWith(right: 0),
                               child: ReusableButtonIcon(
                                 boxColor: Colors.blue,
                                 width: 180,
@@ -200,7 +210,8 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.all(5.0).copyWith(right: 0),
+                              padding:
+                                  const EdgeInsets.all(5.0).copyWith(right: 0),
                               child: const ReusableButtonIcon(
                                 boxColor: Colors.deepOrangeAccent,
                                 width: 180,
@@ -218,7 +229,8 @@ class _HomeScreenState extends State<HomeScreen> {
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             Padding(
-                              padding: const EdgeInsets.all(5.0).copyWith(right: 0),
+                              padding:
+                                  const EdgeInsets.all(5.0).copyWith(right: 0),
                               child: ReusableButtonIcon(
                                 boxColor: Colors.lightGreen[600],
                                 width: 180,
@@ -231,7 +243,8 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.all(5.0).copyWith(right: 0),
+                              padding:
+                                  const EdgeInsets.all(5.0).copyWith(right: 0),
                               child: ReusableButtonIcon(
                                 boxColor: Colors.purple[600],
                                 width: 180,

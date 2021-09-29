@@ -1,3 +1,4 @@
+import 'package:clinic_app/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
@@ -24,7 +25,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.cyan,
+      backgroundColor: kBackgroundColour,
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -37,7 +38,8 @@ class _SplashScreenState extends State<SplashScreen> {
               width: 200,
               height: 200,
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(200), color: Colors.grey),
+                  borderRadius: BorderRadius.circular(200),
+                  color: Colors.deepPurple),
               child: const Center(
                 child: Text(
                   'LOGO',
@@ -46,7 +48,7 @@ class _SplashScreenState extends State<SplashScreen> {
               ),
             ),
             const SpinKitThreeBounce(
-              color: Colors.white,
+              color: Colors.blueAccent,
               size: 50.0,
             )
           ],

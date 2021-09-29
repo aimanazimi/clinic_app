@@ -1,4 +1,5 @@
 import 'package:clinic_app/components/blue_box.dart';
+
 import 'package:clinic_app/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:settings_ui/settings_ui.dart';
@@ -14,9 +15,13 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text('Settings')),
-      body: buildSettingsList(),
+    return SafeArea(
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(0.0, 15.0, 0.0, 15.0),
+        child: Scaffold(
+          body: buildSettingsList(),
+        ),
+      ),
     );
   }
 
@@ -109,8 +114,11 @@ class _SettingsScreenState extends State<SettingsScreen> {
         SettingsSection(
           title: 'Misc',
           tiles: [
-            SettingsTile(title: 'Terms of Service', leading: Icon(Icons.description)),
-            SettingsTile(title: 'Open source licenses', leading: Icon(Icons.collections_bookmark)),
+            SettingsTile(
+                title: 'Terms of Service', leading: Icon(Icons.description)),
+            SettingsTile(
+                title: 'Open source licenses',
+                leading: Icon(Icons.collections_bookmark)),
           ],
         ),
         CustomSection(

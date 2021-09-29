@@ -1,3 +1,4 @@
+import 'package:clinic_app/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:clinic_app/screens/splash_screen.dart';
 import 'package:clinic_app/screens/intro_screen.dart';
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
             title: 'Clinic App',
             theme: ThemeData(
               primarySwatch: Colors.cyan,
+              backgroundColor: kBackgroundColour,
             ),
             home: const IntroScreen(),
           );

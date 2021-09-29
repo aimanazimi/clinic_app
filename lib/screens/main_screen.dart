@@ -1,5 +1,5 @@
 import 'package:clinic_app/screens/home_screen.dart';
-import 'package:clinic_app/screens/login_screen.dart';
+import 'package:clinic_app/screens/member_screen.dart';
 import 'package:clinic_app/screens/settings_screen.dart';
 import 'package:clinic_app/screens/update_screens.dart';
 import 'package:flutter/cupertino.dart';
@@ -19,7 +19,7 @@ class _MainScreenState extends State<MainScreen> {
   final screens = [
     HomeScreen(),
     UpdatesScreen(),
-    LoginScreen(),
+    MemberScreen(),
     SettingsScreen(),
   ];
 
@@ -28,7 +28,6 @@ class _MainScreenState extends State<MainScreen> {
     return MaterialApp(
       home: SafeArea(
         child: Scaffold(
-          backgroundColor: Colors.cyan,
           body: screens[btmNaviBarIndex],
           bottomNavigationBar: BottomNavigationBar(
             currentIndex: btmNaviBarIndex,
@@ -59,7 +58,7 @@ class _MainScreenState extends State<MainScreen> {
             unselectedItemColor: Colors.white,
             showUnselectedLabels: true,
             type: BottomNavigationBarType.fixed,
-            backgroundColor: Colors.cyan[800],
+            backgroundColor: Colors.red[800],
           ),
         ),
       ),
