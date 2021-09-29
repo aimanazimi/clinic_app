@@ -36,7 +36,7 @@ class _UpdatesScreenState extends State<UpdatesScreen> {
                 child: Column(
                   children: [
                     NavigationArrow(
-                      title: 'Promo 1',
+                      title: 'Promo 9',
                       onTap: () {
                         print('Promo 1 tapped');
                       },
