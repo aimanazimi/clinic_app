@@ -1,13 +1,8 @@
-import 'package:clinic_app/components//reusable_button.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
-import 'package:clinic_app/components//reusable_button_icon.dart';
-import 'package:flutter/rendering.dart';
+import 'package:clinic_app/components/reusable_button.dart';
+import 'package:clinic_app/components/reusable_button_icon.dart';
 
 class HomeScreen extends StatefulWidget {
-  static const String id = 'home_screen';
-
   const HomeScreen({Key? key}) : super(key: key);
 
   @override
@@ -15,10 +10,10 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int btmNaviBarIndex = 0;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: SafeArea(
         child: Scaffold(
           backgroundColor: Colors.cyan,
@@ -29,7 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
               padding: const EdgeInsets.fromLTRB(5, 5, 0, 5),
               child: CircleAvatar(
                 child: Image.asset(
-                  'assets/images/hariz.png',
+                  'assets/images/logo.png',
                 ),
                 radius: 40,
                 backgroundColor: Colors.white,
@@ -256,37 +251,6 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
             ],
-          ),
-          bottomNavigationBar: BottomNavigationBar(
-            currentIndex: btmNaviBarIndex,
-            onTap: (index) {
-              setState(() {
-                btmNaviBarIndex = index;
-              });
-            },
-            items: const [
-              BottomNavigationBarItem(
-                icon: Icon(Icons.home),
-                label: 'Home',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.update),
-                label: 'New',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.person),
-                label: 'Member',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.settings),
-                label: 'Settings',
-              ),
-            ],
-            selectedItemColor: Colors.black,
-            unselectedItemColor: Colors.white,
-            showUnselectedLabels: true,
-            type: BottomNavigationBarType.fixed,
-            backgroundColor: Colors.cyan[800],
           ),
         ),
       ),

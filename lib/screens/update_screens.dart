@@ -1,5 +1,5 @@
 import 'package:clinic_app/components/reusable_button.dart';
-import 'package:clinic_app/screens/home_screen.dart';
+import 'package:clinic_app/screens/main_screen.dart';
 import 'package:flutter/material.dart';
 
 class UpdatesScreen extends StatefulWidget {
@@ -100,7 +100,7 @@ class _UpdatesScreenState extends State<UpdatesScreen> {
                           onTap: () {
                             print('next button tapped');
                             Navigator.push(context,
-                                MaterialPageRoute(builder: (context) => const HomeScreen()));
+                                MaterialPageRoute(builder: (context) => const MainScreen()));
                           },
                         ),
                         Row(

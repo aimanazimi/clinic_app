@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:clinic_app/components/reusable_button.dart';
-import 'package:clinic_app/screens/update_screens.dart';
 import 'registration_screen.dart';
 
 class IntroScreen extends StatefulWidget {
@@ -31,36 +30,40 @@ class _IntroScreenState extends State<IntroScreen> {
       body: SafeArea(
         child: Column(
           children: [
-            Stack(children: [
-              CarouselSlider.builder(
-                itemCount: imageLists.length,
-                options: CarouselOptions(
-                    height: 450,
-                    autoPlay: true,
-                    viewportFraction: 1,
-                    pauseAutoPlayOnTouch: true,
-                    onPageChanged: (index, reason) {
-                      setState(() {
-                        activeIndex = index;
-                      });
-                    }),
-                itemBuilder: (context, index, realIndex) {
-                  final imageList = imageLists[index];
-                  return buildImage(imageList, index);
-                },
-              ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.end,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  const SizedBox(
-                    width: double.infinity,
-                    height: 430,
-                  ),
-                  buildIndicator(),
-                ],
-              ),
-            ]),
+            Stack(
+              children: [
+                CarouselSlider.builder(
+                  itemCount: imageLists.length,
+                  options: CarouselOptions(
+                      aspectRatio: 1,
+                      autoPlay: true,
+                      autoPlayAnimationDuration: Duration(seconds: 1),
+                      viewportFraction: 1,
+                      enlargeCenterPage: true,
+                      pauseAutoPlayOnTouch: true,
+                      onPageChanged: (index, reason) {
+                        setState(() {
+                          activeIndex = index;
+                        });
+                      }),
+                  itemBuilder: (context, index, realIndex) {
+                    final imageList = imageLists[index];
+                    return buildImage(imageList, index);
+                  },
+                ),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    const SizedBox(
+                      width: double.infinity,
+                      height: 430,
+                    ),
+                    buildIndicator(),
+                  ],
+                ),
+              ],
+            ),
             Expanded(
               child: Container(
                 color: Colors.cyan,
