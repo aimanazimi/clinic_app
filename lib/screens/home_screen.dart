@@ -13,258 +13,254 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: SafeArea(
-        child: Scaffold(
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: kBackgroundColour,
+        appBar: AppBar(
           backgroundColor: kBackgroundColour,
-          appBar: AppBar(
-            backgroundColor: kBackgroundColour,
-            elevation: 0,
-            leading: Padding(
-              padding: const EdgeInsets.fromLTRB(5, 5, 0, 5),
-              child: CircleAvatar(
-                child: Image.asset(
-                  'assets/images/logo.png',
-                ),
-                radius: 40,
-                backgroundColor: Colors.white,
+          elevation: 0,
+          leading: Padding(
+            padding: const EdgeInsets.fromLTRB(5, 5, 0, 5),
+            child: CircleAvatar(
+              child: Image.asset(
+                'assets/images/logo.png',
               ),
+              radius: 40,
+              backgroundColor: Colors.white,
             ),
-            title: const ListTile(
-              title: Text(
-                'Hi Sayyid,',
-                style: TextStyle(color: Colors.black),
-              ),
-              subtitle: Text('Good <Insert Day>'),
-            ),
-            actions: [
-              Padding(
-                padding: const EdgeInsets.all(8.0).copyWith(right: 15),
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20)),
-                      primary: Colors.white,
-                      onPrimary: Colors.cyan[800],
-                      elevation: 5),
-                  onPressed: () {},
-                  child: const Icon(
-                    Icons.notifications_active,
-                  ),
-                ),
-              )
-            ],
           ),
-          body: Column(
-            children: [
-              Expanded(
-                child: ListView(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Card(
-                        child: ListTile(
-                          title: const TextField(
-                            decoration: InputDecoration(
-                              enabledBorder: OutlineInputBorder(
-                                borderSide:
-                                    BorderSide(color: Colors.white, width: 1.0),
-                                // borderRadius: BorderRadius.all(Radius.circular(32.0)),
-                              ),
-                              focusedBorder: OutlineInputBorder(
-                                borderSide:
-                                    BorderSide(color: Colors.white, width: 2.0),
-                                // borderRadius: BorderRadius.all(Radius.circular(32.0)),
-                              ),
-                              prefixIcon: Icon(Icons.search),
-                              hintText:
-                                  'Search health issue, doctor, topics...',
-                              hintStyle: TextStyle(color: Colors.grey),
-                              // border: OutlineInputBorder(),
+          title: const ListTile(
+            title: Text(
+              'Hi Sayyid,',
+              style: TextStyle(color: Colors.black),
+            ),
+            subtitle: Text('Good <Insert Day>'),
+          ),
+          actions: [
+            Padding(
+              padding: const EdgeInsets.all(8.0).copyWith(right: 15),
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20)),
+                    primary: Colors.white,
+                    onPrimary: Colors.cyan[800],
+                    elevation: 5),
+                onPressed: () {},
+                child: const Icon(
+                  Icons.notifications_active,
+                ),
+              ),
+            )
+          ],
+        ),
+        body: Column(
+          children: [
+            Expanded(
+              child: ListView(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Card(
+                      child: ListTile(
+                        title: const TextField(
+                          decoration: InputDecoration(
+                            enabledBorder: OutlineInputBorder(
+                              borderSide:
+                                  BorderSide(color: Colors.white, width: 1.0),
+                              // borderRadius: BorderRadius.all(Radius.circular(32.0)),
                             ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide:
+                                  BorderSide(color: Colors.white, width: 2.0),
+                              // borderRadius: BorderRadius.all(Radius.circular(32.0)),
+                            ),
+                            prefixIcon: Icon(Icons.search),
+                            hintText: 'Search health issue, doctor, topics...',
+                            hintStyle: TextStyle(color: Colors.grey),
+                            // border: OutlineInputBorder(),
                           ),
-                          trailing: TextButton(
-                            style: TextButton.styleFrom(
-                              minimumSize: const Size.square(20),
-                              primary: Colors.white,
-                              backgroundColor: Colors.cyan[800],
-                            ),
+                        ),
+                        trailing: TextButton(
+                          style: TextButton.styleFrom(
+                            minimumSize: const Size.square(20),
+                            primary: Colors.white,
+                            backgroundColor: Colors.cyan[800],
+                          ),
+                          onPressed: () {},
+                          child: const Icon(
+                            Icons.filter_list,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  const Center(
+                    child: Text(
+                      'CURRENT APPOINTMENT',
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  ReusableButton(
+                    title: 'No appointment today..',
+                    height: 30,
+                    boxColor: Colors.cyan[100],
+                  ), //search bar
+                  const Padding(
+                    padding: EdgeInsets.all(15.0),
+                    child: Text(
+                      'How can we help you?',
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    ),
+                  ), //text widget
+                  SizedBox(
+                    height: 120,
+                    child:
+                        ListView(scrollDirection: Axis.horizontal, children: [
+                      Padding(
+                        padding: const EdgeInsets.all(5.0),
+                        child: ReusableButtonIcon(
+                          icon: Icons.chat,
+                          iconColor: Colors.blue,
+                          iconSize: 35,
+                          width: 120,
+                          title: 'Symptom Bot',
+                          onTap: () {},
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(5.0),
+                        child: ReusableButtonIcon(
+                          icon: Icons.event_note,
+                          iconColor: Colors.teal,
+                          iconSize: 35,
+                          title: 'Booking',
+                          width: 120,
+                          onTap: () {
+                            // Navigator.pushNamed(context, BookingScreen.id);
+                          },
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(5.0),
+                        child: ReusableButtonIcon(
+                          icon: Icons.medical_services,
+                          iconColor: Colors.orangeAccent,
+                          iconSize: 35,
+                          title: 'Prescription',
+                          width: 120,
+                          onTap: () {},
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(5.0),
+                        child: ReusableButtonIcon(
+                          icon: Icons.payment,
+                          iconColor: Colors.yellow[400],
+                          iconSize: 35,
+                          title: 'Billing',
+                          width: 120,
+                          onTap: () {},
+                        ),
+                      ),
+                    ]),
+                  ), //row scrollview
+                  Padding(
+                    padding: const EdgeInsets.all(15.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const Text(
+                          'Popular Categories',
+                          style: TextStyle(
+                              fontSize: 20, fontWeight: FontWeight.bold),
+                        ),
+                        TextButton(
                             onPressed: () {},
-                            child: const Icon(
-                              Icons.filter_list,
+                            child: Text(
+                              'See all',
+                              style: TextStyle(color: Colors.blue[900]),
+                            ))
+                      ],
+                    ),
+                  ), //text widget
+                  Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Padding(
+                            padding:
+                                const EdgeInsets.all(5.0).copyWith(right: 0),
+                            child: ReusableButtonIcon(
+                              boxColor: Colors.blue,
+                              width: 180,
+                              height: 200,
+                              icon: Icons.print,
+                              iconColor: Colors.white,
+                              iconSize: 80,
+                              title: 'Cardiology',
+                              textColor: Colors.white,
+                              onTap: () {},
                             ),
                           ),
-                        ),
-                      ),
-                    ),
-                    const Center(
-                      child: Text(
-                        'CURRENT APPOINTMENT',
-                        style: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.bold),
-                      ),
-                    ),
-                    ReusableButton(
-                      title: 'No appointment today..',
-                      height: 30,
-                      boxColor: Colors.cyan[100],
-                    ), //search bar
-                    const Padding(
-                      padding: EdgeInsets.all(15.0),
-                      child: Text(
-                        'How can we help you?',
-                        style: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.bold),
-                      ),
-                    ), //text widget
-                    SizedBox(
-                      height: 120,
-                      child:
-                          ListView(scrollDirection: Axis.horizontal, children: [
-                        Padding(
-                          padding: const EdgeInsets.all(5.0),
-                          child: ReusableButtonIcon(
-                            icon: Icons.chat,
-                            iconColor: Colors.blue,
-                            iconSize: 35,
-                            width: 120,
-                            title: 'Symptom Bot',
-                            onTap: () {},
+                          Padding(
+                            padding:
+                                const EdgeInsets.all(5.0).copyWith(right: 0),
+                            child: const ReusableButtonIcon(
+                              boxColor: Colors.deepOrangeAccent,
+                              width: 180,
+                              height: 200,
+                              icon: Icons.history_edu,
+                              iconColor: Colors.white,
+                              iconSize: 80,
+                              title: 'Pulmonology',
+                              textColor: Colors.white,
+                            ),
                           ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(5.0),
-                          child: ReusableButtonIcon(
-                            icon: Icons.event_note,
-                            iconColor: Colors.teal,
-                            iconSize: 35,
-                            title: 'Booking',
-                            width: 120,
-                            onTap: () {
-                              // Navigator.pushNamed(context, BookingScreen.id);
-                            },
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(5.0),
-                          child: ReusableButtonIcon(
-                            icon: Icons.medical_services,
-                            iconColor: Colors.orangeAccent,
-                            iconSize: 35,
-                            title: 'Prescription',
-                            width: 120,
-                            onTap: () {},
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(5.0),
-                          child: ReusableButtonIcon(
-                            icon: Icons.payment,
-                            iconColor: Colors.yellow[400],
-                            iconSize: 35,
-                            title: 'Billing',
-                            width: 120,
-                            onTap: () {},
-                          ),
-                        ),
-                      ]),
-                    ), //row scrollview
-                    Padding(
-                      padding: const EdgeInsets.all(15.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          const Text(
-                            'Popular Categories',
-                            style: TextStyle(
-                                fontSize: 20, fontWeight: FontWeight.bold),
-                          ),
-                          TextButton(
-                              onPressed: () {},
-                              child: Text(
-                                'See all',
-                                style: TextStyle(color: Colors.blue[900]),
-                              ))
                         ],
                       ),
-                    ), //text widget
-                    Column(
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Padding(
-                              padding:
-                                  const EdgeInsets.all(5.0).copyWith(right: 0),
-                              child: ReusableButtonIcon(
-                                boxColor: Colors.blue,
-                                width: 180,
-                                height: 200,
-                                icon: Icons.print,
-                                iconColor: Colors.white,
-                                iconSize: 80,
-                                title: 'Cardiology',
-                                textColor: Colors.white,
-                                onTap: () {},
-                              ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Padding(
+                            padding:
+                                const EdgeInsets.all(5.0).copyWith(right: 0),
+                            child: ReusableButtonIcon(
+                              boxColor: Colors.lightGreen[600],
+                              width: 180,
+                              height: 200,
+                              icon: Icons.animation,
+                              iconColor: Colors.white,
+                              iconSize: 80,
+                              title: 'Dermatology',
+                              textColor: Colors.white,
                             ),
-                            Padding(
-                              padding:
-                                  const EdgeInsets.all(5.0).copyWith(right: 0),
-                              child: const ReusableButtonIcon(
-                                boxColor: Colors.deepOrangeAccent,
-                                width: 180,
-                                height: 200,
-                                icon: Icons.history_edu,
-                                iconColor: Colors.white,
-                                iconSize: 80,
-                                title: 'Pulmonology',
-                                textColor: Colors.white,
-                              ),
+                          ),
+                          Padding(
+                            padding:
+                                const EdgeInsets.all(5.0).copyWith(right: 0),
+                            child: ReusableButtonIcon(
+                              boxColor: Colors.purple[600],
+                              width: 180,
+                              height: 200,
+                              icon: Icons.emoji_people,
+                              iconColor: Colors.white,
+                              iconSize: 80,
+                              title: 'Psychiatrist',
+                              textColor: Colors.white,
                             ),
-                          ],
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Padding(
-                              padding:
-                                  const EdgeInsets.all(5.0).copyWith(right: 0),
-                              child: ReusableButtonIcon(
-                                boxColor: Colors.lightGreen[600],
-                                width: 180,
-                                height: 200,
-                                icon: Icons.animation,
-                                iconColor: Colors.white,
-                                iconSize: 80,
-                                title: 'Dermatology',
-                                textColor: Colors.white,
-                              ),
-                            ),
-                            Padding(
-                              padding:
-                                  const EdgeInsets.all(5.0).copyWith(right: 0),
-                              child: ReusableButtonIcon(
-                                boxColor: Colors.purple[600],
-                                width: 180,
-                                height: 200,
-                                icon: Icons.emoji_people,
-                                iconColor: Colors.white,
-                                iconSize: 80,
-                                title: 'Psychiatrist',
-                                textColor: Colors.white,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ), //bottom scrollview
-                  ],
-                ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ), //bottom scrollview
+                ],
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
